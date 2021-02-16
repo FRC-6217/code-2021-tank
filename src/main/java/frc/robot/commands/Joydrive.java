@@ -9,13 +9,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
 public class Joydrive extends CommandBase {
-  private Drivetrain sub;
+  private Drivetrain train;
   private Joystick joy;
   /** Creates a new Joydrive. */
-  public Joydrive( Drivetrain train, Joystick joy) {
+  public Joydrive(Drivetrain train, Joystick joy) {
     addRequirements(train);
 
-    sub = train;
+    this.train = train;
     this.joy = joy;
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -27,13 +27,13 @@ public class Joydrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    sub.drive (joy.getX(),joy.getZ());
+    train.drive(joy.getRawAxis(0),joy.getRawAxis(2));
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    sub.drive(0, 0);
+    train.drive(0, 0);
   }
   // Returns true when the command should end.
   @Override

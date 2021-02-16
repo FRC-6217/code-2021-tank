@@ -23,13 +23,13 @@ import frc.robot.subsystems.Drivetrain;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final Joystick stick = new Joystick(0);
-  private final Drivetrain Drivetrain = new Drivetrain();
+  private final Drivetrain train = new Drivetrain();
   
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
-    CommandScheduler.getInstance().setDefaultCommand(Drivetrain, new Joydrive(Drivetrain, stick));
+    CommandScheduler.getInstance().setDefaultCommand(train, new Joydrive(train, stick));
     // Configure the button bindings
     configureButtonBindings();
   }

@@ -39,7 +39,6 @@ public class Drivetrain extends SubsystemBase {
 
   public void drive (double x, double y) {
     drive.arcadeDrive(x, y);
-
   }
 
   @Override
