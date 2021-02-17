@@ -35,6 +35,8 @@ public class Drivetrain extends SubsystemBase {
     //left.setInverted(true);
 
     drive = new DifferentialDrive(left, right);
+
+    drive.setSafetyEnabled(false);
   }
 
   public void drive (double x, double y) {
